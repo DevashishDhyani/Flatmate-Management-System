@@ -7,7 +7,7 @@ namespace WebApiBackend.Helpers
 {
     public class DevelopmentDatabaseSetup
     {
-        User _yin, _teresa, _bryan, _clay, _test1, _test2;
+        User _yin, _teresa, _bryan, _clay, _test1, _test2, _dhyani;
         Payment _payment1, _payment2;
         // Payment[NAME]1 is for electricity
         // Payment[NAME]2 is for Rent due to many to many relationship
@@ -106,7 +106,17 @@ namespace WebApiBackend.Helpers
                 DateOfBirth = new DateTime(1984, 02, 09),
             };
             _test2.HashedPassword = hasher.HashPassword(_test2, "password");
-			
+
+            _dhyani = new User
+            {
+                Id = 13,
+                UserName = "Dev",
+                FirstName = "Devashish",
+                LastName = "Dhyani",
+                DateOfBirth = new DateTime(1998, 01, 13),
+            };
+            _dhyani.HashedPassword = hasher.HashPassword(_dhyani, "D");
+
             _payment1 = new Payment
             {
                 Id = 1,
@@ -228,6 +238,7 @@ namespace WebApiBackend.Helpers
             _database.Add(_teresa);
             _database.Add(_bryan);
             _database.Add(_clay);
+            _database.Add(_dhyani);
             _database.Add(_payment1);
             _database.Add(_payment2);
             _database.Add(_userPaymentBryan1);

@@ -138,7 +138,7 @@ export default class Payments extends Component {
                                 <h2 className="PaymentsTitle">Payments</h2>
                             </span>
                             <span className="NewPaymentButton" onClick={this._handleOpen}>
-                                <button className="NewPaymentButton">Add new</button>
+                                <button className="NewPaymentButton">ADD NEW</button>
                             </span>
                             <NewPayment onClose={this._handleClose} show={this.state.show} />
                         </td>
